@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: gray;
+    text-align: center;
+}
+
+header {
+    font-family: "Oleo Script", system-ui;
+    font-size: 40px;
+    color: yellow;
+    padding: 6rem;
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+}
+
+h1 {
+    cursor: pointer;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+button {
+    background-color: mediumturquoise;
+    border-radius: 10px; 
+    cursor: pointer;
+    padding: 1rem;
+}
