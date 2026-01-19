@@ -28,7 +28,7 @@ h1 {
 main{
     display: flex;
     flex-direction: column;
-    padding: 2rem;
+    padding: 1rem;
 }
 
 button {
