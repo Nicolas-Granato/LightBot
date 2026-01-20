@@ -28,7 +28,7 @@ h1 {
 main{
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    padding: 2rem;
 }
 
 button {
@@ -36,4 +36,12 @@ button {
     border-radius: 10px; 
     cursor: pointer;
     padding: 1rem;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: darkgray;
+    padding: 3rem;
 }

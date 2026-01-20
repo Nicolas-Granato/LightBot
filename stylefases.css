@@ -9,11 +9,13 @@ header {
 main {
     display: flex;
     flex-direction: row;
+    justify-content: start;
 }
 
 a {
     padding: 1rem;
 }
+
 .voltar {
     display: flex;
     justify-content: start;
@@ -24,6 +26,26 @@ a {
     display: flex;
     justify-content: end;
     align-items: end;
+}
+
+.link{
+    padding: 0;
+}
+
+jogo {
+    padding: 3rem;
+    border: 2px solid black;
+    display: flex;
+    justify-content: start;
+}
+
+comandos {
+    width: 10rem;
+    height: 20rem;
+    background-color: darkgrey;
+    border: 2px solid black;
+    padding: 1rem;
+    border-left: 0;
 }
 
 tabuleiro {
