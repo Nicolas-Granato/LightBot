@@ -32,7 +32,7 @@ main{
 }
 
 button {
-    background-color: mediumturquoise;
+    background-color: yellow;
     border-radius: 10px; 
     cursor: pointer;
     padding: 1rem;
@@ -40,6 +40,7 @@ button {
 
 footer {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     background-color: darkgray;

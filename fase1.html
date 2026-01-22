@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="stylefases.css">
-    <link rel="icon" type="image/png" href="images\iconPagina.png">
+    <link rel="stylesheet" href="css\style.css">
+    <link rel="stylesheet" href="css\stylefases.css">
+    <link rel="icon" type="image/png" href="images\iconPagina.png">  
     <title>lightbot&trade;</title>  
 </head>
 <body>
@@ -18,10 +18,36 @@
             <a class="voltar" href="index.html"><button>VOLTAR</button></a>
         </botoes>
         <jogo>
-            <tabuleiro></tabuleiro>
-            <comandos></comandos>
+            <div>
+                <tabuleiro></tabuleiro>
+                <comandos>
+                    <andar>
+                        <button class="controles">
+                            <img src="images\setaFrente0.png">
+                        </button>
+                    </andar>
+                    <direita>
+                        <button class="controles">
+                            <img src="images\90ºDireita.png">
+                        </button>
+                    </direita>
+                    <esquerda>
+                        <button class="controles">
+                            <img src="images\90ºEsquerda.png">
+                        </button>
+                    </esquerda>
+                    <acender>
+                        <button class="controles">
+                            <img src="images\acender.png">
+                        </button>
+                    </acender>
+                </comandos>
+            </div>
+            <div>
+                <listaDeComandos></listaDeComandos>
+                <button class="enviar">ENVIAR</button>
+            </div>
         </jogo>
-            
     </main>
     <footer>
         <copyright>Copyright &copy;<a class="link" href="https://github.com/Nicolas-Granato">Nícolas Barbosa</a>.Todos os direitos reservados.</copyright>
