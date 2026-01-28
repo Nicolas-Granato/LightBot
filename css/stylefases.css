@@ -90,3 +90,12 @@ listaDeComandos {
     border-top: 0;
     border-left: 0;
 }
+
+personagem {
+    grid-column: 1; 
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+}
