@@ -57,7 +57,7 @@ tabuleiro {
     height: 20rem;  
     background-color: lightgray; 
     border: 2px solid black; 
-    padding: 1rem;
+    padding: 0.5rem;
     display: grid; 
     grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
     grid-template-rows: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;                   
