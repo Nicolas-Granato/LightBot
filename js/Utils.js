@@ -29,15 +29,14 @@ class Robo {
     }
 
     andar(caminhoLivre){
+        coordenadaX = this.posicao[0];
+        coordenadaY = this.posicao[1];
+
         if (caminhoLivre){
-
+            if (angle == 0 && coordenadaX <= 8) coordenadaX++;
+            if (angle == 90 && coordenadaY >= 1) coordenadaY++; 
+            if (angle == 180 && coordenadaX >= 1) coordenadaX--; 
+            if (angle == 270 && coordenadaY <= 8) coordenadaY--;  
+        }
     }
-}
-
-class System {
-    botoesControle = documento.querySelector(".controles")
-    listaVisual = documento.querySelector("listaDeComandos");
-    botaoEnviar = document.querySelector(".enviar");
-    fila = [];
-    quadrado = 2.5;
 }
