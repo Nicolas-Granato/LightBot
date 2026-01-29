@@ -55,6 +55,48 @@ class Controles {
     conectarEvento(){
         this.query.addEventListener("click",funcao);
     }
+
+    setupJogo() {
+        const elementoRobo = querys.elementoRobo;
+        const botaoAndar = querys.botaoAndar;
+        const botaoDireita = querys.botaoGirarDireita;
+        const botaoEsquerda = querys.botaoGirarEsquerda;
+        const botaoPlay = querys.botaoEnviar;
+
+        let caminhoLivre = true; 
+
+        const robo1 = new Robos(0, [1, 1], elementoRobo);
+        
+        const controleAndar = new Controles(
+            botaoAndar, 
+            spritesControles.botaoAndar, 
+            () => robo1.andar(caminhoLivre) 
+        );
+
+        const controleDireita = new Controles(
+            botaoDireita, 
+            spritesControles.botaoDireita, 
+            () => robo1.virarDireita()
+        );
+
+        const controleEsquerda = new Controles(
+            botaoEsquerda, 
+            spritesControles.botaoEsquerda,
+            () => robo1.virarEsquerda()
+        );
+
+        controleAndar.conectarEvento();
+        controleDireita.conectarEvento();
+        controleEsquerda.conectarEvento();
+
+        if (botaoPlay) {
+            botaoPlay.addEventListener("click", () => {
+                Sistema.executarFila();
+            });
+        }
+
+        return robo1;
+    }
 }
 
 const Sistema = {
@@ -77,4 +119,7 @@ const querys = {
     botaoGirarDireita : document.querySelector("direita"),
     botaoGirarEsquerda : document.querySelector("esquerda"),
     botaoAcender : document.querySelector("acender"),
+    botaoEnviar : document.querySelector(".enviar"),
+
+    elementoRobo : documento.querySelector("personagem"),
 }

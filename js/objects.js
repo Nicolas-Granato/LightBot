@@ -1,3 +1,5 @@
+import { Robos, Controles, spritesControles} from './models&Utils.js';
+
 const robo1 = new Robos(
     0, 
     [1, 1],
