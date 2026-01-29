@@ -48,17 +48,30 @@ class Controles {
     botaoGirarEsquerda = document.querySelector("esquerda");
     botaoAcender = document.querySelector("acender");
 
-    constructor(nomeBotao, query, sprites){
+    constructor(nomeBotao, query, sprites, funcao){
         this.nomeBotao = nomeBotao;
         this.query = query;
         this.sprites = sprites;
+        this.funcao = funcao;
     }
 
-    animacaoBotao(){
+    animacaoBotao(timer){
         for (let i = 0; i < length(this.sprites); i++){
             setInterval(() => {
                 this.query.src = this.sprites[i];
-            },150)
+            },timer)
         }
     }
+
+    linkBotaoAcao(){
+        this.query.addEventListener("click",funcao);
+    }
+}
+
+const Sistema = {
+    fila: [],
+
+    adicionarEventoFila(linkBotaoAcao){
+        this.fila.push(linkBotaoAcao);
+    },
 }
