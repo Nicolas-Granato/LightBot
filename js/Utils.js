@@ -25,15 +25,12 @@ class Robos {
     }
 
     andar(caminhoLivre){
-        if (!caminhoLivre) return;
-
-        if (this.angle === 0 && this.posicao[1] > 1)   this.posicao[1]--;
-        if (this.angle === 90 && this.posicao[0] < 8)  this.posicao[0]++;
-        if (this.angle === 180 && this.posicao[1] < 8) this.posicao[1]++;
-        if (this.angle === 270 && this.posicao[0] > 1) this.posicao[0]--;
-
-        this.roboImg.parentElement.style.gridColumn = this.posicao[0];
-        this.roboImg.parentElement.style.gridRow = this.posicao[1];
+        if (caminhoLivre){
+            if (this.angle == 0 && this.posicao[0] <= 8) this.posicao[0]++;
+            if (this.angle == 90 && this.posicao[1] >= 1) this.posicao[1]++; 
+            if (this.angle == 180 && this.posicao[0] >= 1) this.posicao[0]--; 
+            if (this.angle == 270 && this.posicao[1] <= 8) this.posicao[1]--;  
+        }
     }
 }
 
