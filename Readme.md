@@ -1,6 +1,4 @@
-🤖 Projeto Lightbot
-
-Trabalho de [Desenvolvimento Web I]
+🤖 Projeto Lightbot - Trabalho de [Desenvolvimento Web I]
 
 📄 Resumo do Projeto
 Este software é uma implementação interativa inspirada no jogo de raciocínio Lightbot. O projeto consiste em um simulador onde o usuário deve resolver desafios de lógica, guiando um personagem por um cenário quadriculado até atingir um objetivo específico.
