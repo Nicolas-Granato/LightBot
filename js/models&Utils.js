@@ -1,3 +1,5 @@
+export { Robos, Controles, spritesControles, querys, Sistema };
+
 class Robos {
     constructor(angle, posicao, roboImg){
         this.angle = angle;
@@ -6,12 +8,12 @@ class Robos {
     }
 
     virarDireita(){
-        this.angle = (this.angle + 90) % 360;
+        this.angle = (this.angle - 90) % 360;
         this.roboImg.style.transform = `rotate(${this.angle}deg)`;
     }
 
     virarEsquerda(){
-        this.angle = (this.angle - 90 + 360) % 360;
+        this.angle = (this.angle + 90 + 360) % 360;
         this.roboImg.style.transform = `rotate(${this.angle}deg)`;
     }
 
@@ -21,7 +23,7 @@ class Robos {
                 this.roboImg.src = spritesAcenderRobo[i];
             },150);
         }
-        this.roboImg.src = "images\\roboSprite0.png";
+        this.roboImg.src = "images/roboSprite0.png";
     }
 
     andar(caminhoLivre){
@@ -45,7 +47,7 @@ class Controles {
     }
 
     animacaoBotao(timer){
-        for (let i = 0; i < length(this.sprites); i++){
+        for (let i = 0; i < (this.sprites).length; i++){
             setInterval(() => {
                 this.query.src = this.sprites[i];
             },timer)
@@ -53,49 +55,7 @@ class Controles {
     }
 
     conectarEvento(){
-        this.query.addEventListener("click",funcao);
-    }
-
-    setupJogo() {
-        const elementoRobo = querys.elementoRobo;
-        const botaoAndar = querys.botaoAndar;
-        const botaoDireita = querys.botaoGirarDireita;
-        const botaoEsquerda = querys.botaoGirarEsquerda;
-        const botaoPlay = querys.botaoEnviar;
-
-        let caminhoLivre = true; 
-
-        const robo1 = new Robos(0, [1, 1], elementoRobo);
-        
-        const controleAndar = new Controles(
-            botaoAndar, 
-            spritesControles.botaoAndar, 
-            () => robo1.andar(caminhoLivre) 
-        );
-
-        const controleDireita = new Controles(
-            botaoDireita, 
-            spritesControles.botaoDireita, 
-            () => robo1.virarDireita()
-        );
-
-        const controleEsquerda = new Controles(
-            botaoEsquerda, 
-            spritesControles.botaoEsquerda,
-            () => robo1.virarEsquerda()
-        );
-
-        controleAndar.conectarEvento();
-        controleDireita.conectarEvento();
-        controleEsquerda.conectarEvento();
-
-        if (botaoPlay) {
-            botaoPlay.addEventListener("click", () => {
-                Sistema.executarFila();
-            });
-        }
-
-        return robo1;
+        this.query.addEventListener("click", this.funcao);
     }
 }
 
@@ -108,18 +68,18 @@ const Sistema = {
 }
 
 const spritesControles = {
-    spritesBotaoAndar : ["images\\setaFrente0.png","images\\setaFrente1.png"],
-    spritesBotaoGirarDireita : ["images\\90ºDireita0.png","images\\90ºDireita1.png"],
-    spritesBotaoGirarEsquerda : ["images\\90ºEsquerda0.png","images\\90ºEsquerda1.png"],
+    spritesBotaoAndar : ["images/setaFrente0.png","images/setaFrente1.png"],
+    spritesBotaoGirarDireita : ["images/90ºDireita0.png","images/90ºDireita1.png"],
+    spritesBotaoGirarEsquerda : ["images/90ºEsquerda0.png","images/90ºEsquerda1.png"],
 
 }
 
 const querys = {
-    botaoAndar : document.querySelector("andar"),
-    botaoGirarDireita : document.querySelector("direita"),
-    botaoGirarEsquerda : document.querySelector("esquerda"),
-    botaoAcender : document.querySelector("acender"),
+    botaoAndar : document.querySelector(".andar img"),
+    botaoGirarDireita : document.querySelector(".direita img"),
+    botaoGirarEsquerda : document.querySelector(".esquerda img"),
+    botaoAcender : document.querySelector(".acender img"),
     botaoEnviar : document.querySelector(".enviar"),
 
-    elementoRobo : documento.querySelector("personagem"),
+    elementoRobo : document.querySelector(".personagem img"),
 }
