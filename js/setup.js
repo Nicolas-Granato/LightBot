@@ -40,3 +40,5 @@ function setupJogo() {
 
     return robo1;
 };
+
+export {setupJogo}

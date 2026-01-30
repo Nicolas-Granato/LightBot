@@ -1,3 +1,3 @@
-import { setupJogo } from "./objects.js";
+import { setupJogo } from "./setup.js";
 
-document.addEventListener("DOMContentLoaded", setupJogo);
+document.addEventListener("DOMContentLoaded", setupJogo());

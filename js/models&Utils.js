@@ -6,12 +6,12 @@ class Robos {
     }
 
     virarDireita(){
-        this.angle = (this.angle - 90 + 360) % 360;
+        this.angle = (this.angle + 90) % 360;
         this.roboImg.style.transform = `rotate(${this.angle}deg)`;
     }
 
     virarEsquerda(){
-        this.angle = (this.angle + 90) % 360;
+        this.angle = (this.angle - 90 + 360) % 360;
         this.roboImg.style.transform = `rotate(${this.angle}deg)`;
     }
 
