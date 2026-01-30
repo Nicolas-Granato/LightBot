@@ -1,5 +1,3 @@
-export { Robos, Controles, spritesControles, querys, Sistema };
-
 class Robos {
     constructor(angle, posicao, roboImg){
         this.angle = angle;
@@ -83,3 +81,5 @@ const querys = {
 
     elementoRobo : document.querySelector(".personagem img"),
 }
+
+export { Robos, Controles, spritesControles, querys, Sistema };
