@@ -32,7 +32,7 @@ a {
     padding: 0;
 }
 
-jogo {
+.jogo {
     padding: 3rem;
     border: 2px solid black;
     display: flex;
@@ -40,7 +40,7 @@ jogo {
     justify-content: start;
 }
 
-comandos {
+.comandos {
     width: 5rem;
     height: 20rem;
     background-color: darkgrey;
@@ -52,7 +52,7 @@ comandos {
     justify-content: space-around;
 }
 
-tabuleiro {
+.tabuleiro {
     width: 20rem;
     height: 20rem;  
     background-color: lightgray; 
@@ -72,11 +72,11 @@ button > img{
     height: 32px;
 }
 
-jogo > div {
+.jogo > div {
     display: flex;
 }
 
-listaDeComandos {
+.listaDeComandos {
     width: 20rem;
     height: 6rem;
     background-color: darkgrey;
@@ -91,7 +91,7 @@ listaDeComandos {
     border-left: 0;
 }
 
-personagem {
+.personagem {
     grid-column: 1; 
     grid-row: 1;
     display: flex;
