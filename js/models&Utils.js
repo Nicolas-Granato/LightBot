@@ -6,22 +6,21 @@ class Robos {
     }
 
     virarDireita(){
-        this.angle = (this.angle - 90) % 360;
+        this.angle = (this.angle - 90 + 360) % 360;
         this.roboImg.style.transform = `rotate(${this.angle}deg)`;
     }
 
     virarEsquerda(){
-        this.angle = (this.angle + 90 + 360) % 360;
+        this.angle = (this.angle + 90) % 360;
         this.roboImg.style.transform = `rotate(${this.angle}deg)`;
     }
 
-    acender(spritesAcenderRobo){
-        for (let i = 0; i < 3; i++){
-            setInterval(() => {
-                this.roboImg.src = spritesAcenderRobo[i];
-            },150);
-        }
-        this.roboImg.src = "images/roboSprite0.png";
+    acender(sprites) {
+        sprites.forEach((sprite, i) => {
+            setTimeout(() => {
+                this.roboImg.src = sprite;
+            }, i * 150);
+        });
     }
 
     andar(caminhoLivre){
@@ -44,16 +43,22 @@ class Controles {
         this.funcao = funcao;
     }
 
-    animacaoBotao(timer){
-        for (let i = 0; i < (this.sprites).length; i++){
-            setInterval(() => {
-                this.query.src = this.sprites[i];
-            },timer)
-        }
+    animacaoBotao(){
+        let i = 0;
+        const intervalo = setInterval(() => {
+            this.query.src = this.sprites[i];
+            i++;
+
+            if (i >= this.sprites.length) {
+                clearInterval(intervalo);
+            }
+        }, 200);
     }
 
     conectarEvento(){
-        this.query.addEventListener("click", this.funcao);
+        this.query.addEventListener("click", () => {
+            Sistema.adicionarEventoFila(this.funcao);
+        });
     }
 }
 
@@ -62,6 +67,32 @@ const Sistema = {
 
     adicionarEventoFila(linkBotaoAcao){
         this.fila.push(linkBotaoAcao);
+    },
+
+    executarFila() {
+        let delay = 0;
+
+        this.fila.forEach(funcao => {
+            setTimeout(() => {
+                funcao();
+            }, delay);
+
+            delay += 400;
+        });
+
+        this.fila = [];
+    },
+
+    getQuerys() {
+        return{
+            botaoAndar : document.querySelector(".andar img"),
+            botaoGirarDireita : document.querySelector(".direita img"),
+            botaoGirarEsquerda : document.querySelector(".esquerda img"),
+            botaoAcender : document.querySelector(".acender img"),
+            botaoEnviar : document.querySelector(".enviar"),
+
+            elementoRobo : document.querySelector(".personagem img"),
+        }
     },
 }
 
@@ -72,14 +103,4 @@ const spritesControles = {
 
 }
 
-const querys = {
-    botaoAndar : document.querySelector(".andar img"),
-    botaoGirarDireita : document.querySelector(".direita img"),
-    botaoGirarEsquerda : document.querySelector(".esquerda img"),
-    botaoAcender : document.querySelector(".acender img"),
-    botaoEnviar : document.querySelector(".enviar"),
-
-    elementoRobo : document.querySelector(".personagem img"),
-}
-
-export { Robos, Controles, spritesControles, querys, Sistema };
+export { Robos, Controles, spritesControles, Sistema};
